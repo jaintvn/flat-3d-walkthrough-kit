@@ -4,6 +4,20 @@ Claude Code skills that turn an apartment floor plan into a walkable first-perso
 (Blender → Unreal Engine 5.8), in Furnished, Semi-furnished and Without-furniture versions, optionally with the real
 surroundings seen from the balconies (geo-referenced from latitude/longitude).
 
+## What it does: input → output
+
+**Input:** a floor plan image (below), plus a few answers Claude asks for (builder or style references, which way the
+balconies face, a location pin if you want the real surroundings in the views).
+
+<p align="center"><img src="examples/floor_plan_input.jpg" alt="Input floor plan: Type G 2BHK" width="760"></p>
+
+**Output:** the same flat as a first-person walkthrough app, from the plan's exact dimensions.
+Click a preview for the full recording.
+
+| macOS app (Unreal, Lumen lighting, with the balcony view) | Android app (baked lighting, touch controls) |
+|---|---|
+| [![Mac walkthrough](recordings/mac_preview.gif)](recordings/mac_walkthrough.mp4) | [![Android walkthrough](recordings/android_preview.gif)](recordings/android_walkthrough.mp4) |
+
 | Skill | Purpose |
 |---|---|
 | `flat-walkthrough` | Entry point: intake (asks for missing inputs), project scaffold, stage order. Holds the script kit, UE template content and Poly Haven (CC0) library |
