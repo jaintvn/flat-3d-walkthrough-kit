@@ -1,0 +1,19 @@
+{
+  "_doc": "Furnishing variants. Each variant removes objects from the furnished flat. An object goes when its 'flat_cat' custom property (set in furnish.py / build_flat.py, exported to scene.json as 'cat') is in 'remove_cats', or when its name matches one of 'remove_patterns' (Python regex, searched in the Blender object name = Unreal actor label). Lights are removed by the same rules. Categories: arch, bath_fitting, switch, mirror, wall_finish, kitchen_fitted, appliance, wardrobe, false_ceiling, light_fitting, fan, loose_furniture, bed, study, tv, soft_furnishing, curtain, decor, plant, balcony_furniture, context. The 'keep_note' fields are for the docs only. Confirm with the user what their builder hands over before building SemiFurnished.",
+  "variants": {
+    "SemiFurnished": {
+      "title": "Semi-furnished",
+      "lighting": "fittings",
+      "remove_cats": ["loose_furniture", "bed", "study", "tv", "soft_furnishing", "curtain", "decor", "plant", "balcony_furniture", "appliance"],
+      "remove_patterns": ["LIV_Sofa_", "LIV_Armchair_", "LIV_CoffeeTable_", "DIN_Table_", "DIN_Chair_", "BR\\d_Bed_", "BR\\d_SideTable_", "BR\\d_StudyDesk$", "BR\\d_DeskChair_", "BR1_DeskLamp$", "BAL\\d_Chair_", "BAL\\d_SideTable$", "_Plant(_|$)", "KIT_Herb$", "BR2_DeskPlant$", "LIV_TV$", "LIV_TV_Screen$", "_Curtain_", "_Vase$", "_Books", "_ShelfBooks_", "_DeskBooks_", "BR1_PhotoFrame$", "_Rug$", "FOY_Runner$", "DIN_Runner$", "KIT_Jar_", "KIT_Board$", "DIN_Painting$", "FOY_Art$", "T\\d_Towel$", "VAN_HandTowel$", "KIT_Fridge", "KIT_WashingMachine$", "KIT_WM_"],
+      "keep_note": "Builder fit-out stays: modular kitchen (cabinets, counter, sink, hob, chimney), wardrobes, false ceiling with downlights and coves, wall lights, pendants, fans, bathroom fittings, TV wall unit."
+    },
+    "Unfurnished": {
+      "title": "Without furniture",
+      "lighting": "daylight",
+      "remove_cats": ["loose_furniture", "bed", "study", "tv", "soft_furnishing", "curtain", "decor", "plant", "balcony_furniture", "appliance", "kitchen_fitted", "wardrobe", "false_ceiling", "light_fitting", "fan"],
+      "remove_patterns": ["LIV_Sofa_", "LIV_Armchair_", "LIV_CoffeeTable_", "DIN_Table_", "DIN_Chair_", "BR\\d_Bed_", "BR\\d_SideTable_", "BR\\d_Wardrobe$", "BR\\d_StudyDesk$", "BR\\d_DeskChair_", "BR1_DeskLamp$", "BAL\\d_Chair_", "BAL\\d_SideTable$", "_Plant(_|$)", "KIT_Herb$", "BR2_DeskPlant$", "LIV_TV$", "LIV_TV_Screen$", "LIV_TVUnit", "DIN_Pendant", "BR2_Pendant_", "KIT_Fridge", "KIT_WashingMachine$", "KIT_WM_", "_Curtain_", "_Vase$", "_Books", "_ShelfBooks_", "_DeskBooks_", "BR1_PhotoFrame$", "_Rug$", "FOY_Runner$", "DIN_Runner$", "KIT_Jar_", "KIT_Board$", "DIN_Painting$", "FOY_Art$", "T\\d_Towel$", "VAN_HandTowel$", "_Sconce", "^KIT_", "_CeilingFan$", "^FC_Boards$", "^FC_CoveLED$", "^LGT_DownlightTrims$", "^LGT_Pendant$", "^LGT_BR2_Pend[AB]$", "^LGT_SconceL$", "^LGT_SconceR$", "^LGT_BR1_Sconce[AB]$", "^LGT_VanSconce$", "^LGT_Fan", "^LGT_Downlight_\\d+$"],
+      "keep_note": "Bare shell: architecture, doors, windows, railings, floor and wall finishes, bathroom fittings, mirrors, switch plates. Lit by daylight only (sun and sky); the corridor light outside the entrance stays."
+    }
+  }
+}
